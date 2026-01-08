@@ -25,7 +25,7 @@ import { RecipesModule } from './recipes/recipes.module';
       port: parseInt(process.env.DB_PORT || '5432'),
       username: process.env.DB_USERNAME || 'postgres',
       password: process.env.DB_PASSWORD || 'postgres',
-      database: process.env.DB_NAME || 'diet_system_db',
+      database: process.env.DB_NAME || 'dbWeb',
       entities: [User, DietPlan, Appointment, Recipe],
       synchronize: process.env.TYPEORM_SYNCHRONIZE === 'true',
       logging: true,
