@@ -20,6 +20,7 @@ import { RecipesModule } from './recipes/recipes.module';
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
+      url: process.env.DATABASE_URL,
       host: process.env.DB_HOST || 'localhost',
       port: parseInt(process.env.DB_PORT || '5432'),
       username: process.env.DB_USERNAME || 'postgres',
@@ -28,6 +29,7 @@ import { RecipesModule } from './recipes/recipes.module';
       entities: [User, DietPlan, Appointment, Recipe],
       synchronize: process.env.TYPEORM_SYNCHRONIZE === 'true',
       logging: true,
+      ssl: process.env.DATABASE_URL ? { rejectUnauthorized: false } : false,
     }),
     AuthModule,
     DietPlansModule,
