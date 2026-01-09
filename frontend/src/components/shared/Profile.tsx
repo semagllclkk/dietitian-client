@@ -5,6 +5,7 @@ import { Button, Card, Label, TextInput } from "flowbite-react";
 import { FaUser, FaTrash, FaSave } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useLoggedInUsersContext } from "../auth/LoggedInUserContext";
+import Cookies from "universal-cookie";
 
 const Profile = () => {
     const { loggedInUser, setLoggedInUser } = useLoggedInUsersContext();
@@ -63,12 +64,18 @@ const Profile = () => {
             const response = await api.patch("auth/profile", updateData);
             showSuccess("Profil başarıyla güncellendi");
 
-            setLoggedInUser({
+            const updatedUser = {
                 ...loggedInUser!,
                 fullName: response.data.fullName,
                 email: response.data.email,
                 phone: response.data.phone,
-            });
+            };
+
+            setLoggedInUser(updatedUser);
+
+            // Save to cookies for persistence
+            const cookies = new Cookies();
+            cookies.set("loggedInUser", JSON.stringify(updatedUser), { path: "/" });
 
             setFormData({
                 ...formData,

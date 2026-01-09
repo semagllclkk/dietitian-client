@@ -121,14 +121,14 @@ const DietPlanFormModal = ({ plan, onClose, onSuccess }: Props) => {
 
   return (
     <Modal show={true} size="3xl" onClose={onClose}>
-      <ModalHeader className="bg-lime-100 border-b-2 border-lime-300 !text-gray-900 font-semibold">
+      <ModalHeader className="bg-lime-100 border-b-2 border-lime-300 font-semibold" style={{ color: '#000' }}>
         {plan ? "Diyet Planını Düzenle" : "Yeni Diyet Planı Oluştur"}
       </ModalHeader>
       <ModalBody className="bg-gradient-to-br from-lime-50 to-white text-black">
         <div className="space-y-4 max-h-[70vh] overflow-y-auto pr-2">
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <Label htmlFor="title">Plan Başlığı *</Label>
+              <Label htmlFor="title" className="font-semibold" style={{ color: '#000' }}>Plan Başlığı *</Label>
               <TextInput
                 id="title"
                 value={formData.title}
@@ -137,7 +137,7 @@ const DietPlanFormModal = ({ plan, onClose, onSuccess }: Props) => {
               />
             </div>
             <div>
-              <Label htmlFor="clientId">Danışan *</Label>
+              <Label htmlFor="clientId" className="font-semibold" style={{ color: '#000' }}>Danışan *</Label>
               <Select
                 id="clientId"
                 value={formData.clientId}
@@ -158,7 +158,7 @@ const DietPlanFormModal = ({ plan, onClose, onSuccess }: Props) => {
           </div>
 
           <div>
-            <Label htmlFor="description">Açıklama *</Label>
+            <Label htmlFor="description" className="font-semibold" style={{ color: '#000' }}>Açıklama *</Label>
             <Textarea
               id="description"
               rows={3}
@@ -170,7 +170,7 @@ const DietPlanFormModal = ({ plan, onClose, onSuccess }: Props) => {
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <Label htmlFor="startDate">Başlangıç Tarihi *</Label>
+              <Label htmlFor="startDate" className="font-semibold" style={{ color: '#000' }}>Başlangıç Tarihi *</Label>
               <TextInput
                 id="startDate"
                 type="date"
@@ -179,7 +179,7 @@ const DietPlanFormModal = ({ plan, onClose, onSuccess }: Props) => {
               />
             </div>
             <div>
-              <Label htmlFor="endDate">Bitiş Tarihi *</Label>
+              <Label htmlFor="endDate" className="font-semibold" style={{ color: '#000' }}>Bitiş Tarihi *</Label>
               <TextInput
                 id="endDate"
                 type="date"
@@ -194,7 +194,7 @@ const DietPlanFormModal = ({ plan, onClose, onSuccess }: Props) => {
 
             <div className="space-y-3">
               <div>
-                <Label htmlFor="breakfast">🌅 Kahvaltı *</Label>
+                <Label htmlFor="breakfast" className="font-semibold" style={{ color: '#000' }}>🌅 Kahvaltı *</Label>
                 <Textarea
                   id="breakfast"
                   rows={2}
@@ -205,7 +205,7 @@ const DietPlanFormModal = ({ plan, onClose, onSuccess }: Props) => {
               </div>
 
               <div>
-                <Label htmlFor="lunch">☀️ Öğle Yemeği *</Label>
+                <Label htmlFor="lunch" className="font-semibold" style={{ color: '#000' }}>☀️ Öğle Yemeği *</Label>
                 <Textarea
                   id="lunch"
                   rows={2}
@@ -216,7 +216,7 @@ const DietPlanFormModal = ({ plan, onClose, onSuccess }: Props) => {
               </div>
 
               <div>
-                <Label htmlFor="dinner">🌙 Akşam Yemeği *</Label>
+                <Label htmlFor="dinner" className="font-semibold" style={{ color: '#000' }}>🌙 Akşam Yemeği *</Label>
                 <Textarea
                   id="dinner"
                   rows={2}
@@ -227,7 +227,7 @@ const DietPlanFormModal = ({ plan, onClose, onSuccess }: Props) => {
               </div>
 
               <div>
-                <Label htmlFor="snacks">🍎 Ara Öğünler *</Label>
+                <Label htmlFor="snacks" className="font-semibold" style={{ color: '#000' }}>🍎 Ara Öğünler *</Label>
                 <Textarea
                   id="snacks"
                   rows={2}
@@ -240,7 +240,7 @@ const DietPlanFormModal = ({ plan, onClose, onSuccess }: Props) => {
           </div>
 
           <div>
-            <Label htmlFor="notes">📝 Ek Notlar</Label>
+            <Label htmlFor="notes" className="font-semibold" style={{ color: '#000' }}>📝 Ek Notlar</Label>
             <Textarea
               id="notes"
               rows={3}
